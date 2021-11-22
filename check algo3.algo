@@ -1,0 +1,57 @@
+PROCEDURE dot_product(v1,v2:ARRAY_OF FLOAT)
+VAR
+    n,m:INTEGER
+BEGIN
+    n:=v1.length-1
+    m:=v2.length-1
+    ps:=0
+    IF (n<>m) THEN
+        write("you can't calculate the dot product")
+        ELSE
+            FOR i FROM 0 TO n STEP 1  DO
+                ps:=ps+v1[i]*v2[i]
+            END_FOR
+        END_IF
+    END_IF
+END
+ALGORITHM dot_product
+    v:ARRAY_OF ARRAY_OF
+    i,j:INTEGER
+BEGIN
+    FOR i FROM 0 TO v.length-1 STEP 1 DO
+    FOR j FROM i+1 TO v.length-1 STEP 1 DO 
+    dot_product(v[i],v[j],ps)
+    IF (ps=0)THEN
+    write (v[i]"AND",v[j],"ARE ORTHOGONAL")
+END
+// FUNCTION
+// FUNCTION
+// FUNCTION
+FUNCTION dot_product(v1,v2:ARRAY_OF FLOAT) : FLOAT
+VAR
+     n,m,i:INTEGER
+     ps: FLOAT
+BEGIN
+     n:=v1.length-1
+    m:=v2.length-1
+    ps:=0
+    IF (n<>m) THEN
+        write("you can't calculate the dot product")
+        ELSE
+            FOR i FROM 0 TO n STEP 1  DO
+                ps:=ps+v1[i]*v2[i]
+            END_FOR
+    END_IF
+    RETURN ps ;
+END
+ALGORITHM dot_product
+VAR
+     v:ARRAY_OF ARRAY_OF
+    i,j:INTEGER
+BEGIN
+       FOR i FROM 0 TO v.length-1 STEP 1 DO
+    FOR j FROM i+1 TO v.length-1 STEP 1 DO 
+    ps:=dot_product(v[i],v[j])
+    IF (ps=0)THEN
+    write (v[i]"AND",v[j],"ARE ORTHOGONAL")
+END
